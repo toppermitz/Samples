@@ -4,7 +4,7 @@ var
 begin
   try
     Cmd := 'cat /proc/cpuinfo | grep -i "^model name" | awk -F": " ''{print $2}'' | head -1 | sed ''s/ \+/ /g''';
-    TLinuxUtils.RunCommand(Cmd,FModel);
+    TLinuxUtils.RunCommand(Cmd,StrReturn);
   except
     on E:Exception do
     begin
